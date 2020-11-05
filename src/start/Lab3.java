@@ -30,7 +30,7 @@ public class Lab3 {
 	    return bd.doubleValue();
 	}
 	
-	static double calcPi(int accuracy) {
+	static double calcPi(long accuracy) {
 	
 		double pi = 1;
 		boolean isCorrect = false;
@@ -46,12 +46,12 @@ public class Lab3 {
 		return pi*2;
 	}
 	
-	static double calcPi2(int accuracy) {
+	static double calcPi2(long accuracy) {
 		
 		double pi = 0;
 		boolean isCorrect = false;
 		
-		for (int i = 0; i <= accuracy; i++) {
+		for (long i = 0; i <= accuracy; i++) {
 			pi += Math.pow(-1, i) / (2*i+1);
 			if (compareToPi(pi*4) && !isCorrect) {
 				System.out.println("6 digits using Wallis' method are correct for n = " + i);
@@ -71,7 +71,7 @@ public class Lab3 {
 
 	public static void main(String[] args) {
 		
-		int acc1 = 5000000;
+		long acc1 = 5000000;
 		int acc2 = 5000000;
 		int[] arr1 = {1, 2, 3, 4, 5};
 		int[] arr2 = {6, 7, 8};
