@@ -189,6 +189,19 @@ public class Lab4 {
 
 	// return an array with minimal values from each row
 	public static int[] getMinimals(int[][] inArr) {
+		int[] arr = new int[inArr.length];
+		for (int i = 0; i < inArr.length; i++) {
+			int min = inArr[i][0];
+			for (int j = 0; j < inArr[i].length; j++) {
+				if (inArr[i][j] < min) {
+					min = inArr[i][j];
+				}
+				if (j == inArr[i].length-1) {
+					arr[i] = min;
+				}
+			}
+		}
+		return arr;
 	}
 
 	public static void main(String[] args) {
