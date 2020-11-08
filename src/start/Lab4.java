@@ -173,7 +173,18 @@ public class Lab4 {
 	}
 
 	// …
-	public static void showArr(int[] arrIn) {
+	public static void showArr(int[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			if (i == 0) {
+				System.out.print("{");
+			}
+			System.out.print(arr[i]);
+			if (i != arr.length-1) {
+				System.out.print(", ");
+			} else {
+				System.out.print("}\n");
+			}
+		}
 	}
 
 	// return an array with minimal values from each row
@@ -184,11 +195,7 @@ public class Lab4 {
 		
 		// TESTS
 		
-		int[] arr1 = readArray(Integer.parseInt(input.nextLine()));
-		int[] arr2 = readArray(Integer.parseInt(input.nextLine()));
-		int[] arr = appendArrays(arr1, arr2);
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(arr[i]);
-		}
+		int[] arr = {1, 2, 3, 4, 5};
+		showArr(arr);
 	}
 }
