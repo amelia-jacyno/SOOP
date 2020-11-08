@@ -80,7 +80,7 @@ public class Lab3 {
 		double pi1 = calcPi(acc1);
 		double pi2 = calcPi2(acc2);
 		System.out.println("PI calculated using Wallis' method: " + pi1);
-		System.out.println("PI calculated using Gregory's method: " + pi1);
+		System.out.println("PI calculated using Gregory's method: " + pi2);
 	
 		int[] arr3 = concatArrays(arr1, arr2);
 		System.out.println("Concat of test arrays:");
