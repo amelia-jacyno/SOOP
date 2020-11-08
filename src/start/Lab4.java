@@ -18,13 +18,19 @@ public class Lab4 {
 				arr[i] = 0;
 			}
 		}
-		for (int i = 0; i < size; i++) {
-			System.out.println(arr[i]);
-		}
 		return arr;
 	}
 
 	public static int[] appendArrays(int[] a1, int[] a2) {
+		int[] arr = new int[a1.length + a2.length];
+		for (int i = 0; i < arr.length; i++) {
+			if (i < a1.length) {
+				arr[i] = a1[i];
+			} else {
+				arr[i] = a2[i-a1.length];
+			}
+		}
+		return arr;
 	}
 
 	public int getMinimalElement(int[] inArr) {
@@ -70,6 +76,14 @@ public class Lab4 {
 	}
 
 	public static void main(String[] args) {
-		readArray(Integer.parseInt(input.nextLine()));
+		
+		// TESTS
+		
+		int[] arr1 = readArray(Integer.parseInt(input.nextLine()));
+		int[] arr2 = readArray(Integer.parseInt(input.nextLine()));
+		int[] arr = appendArrays(arr1, arr2);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
 	}
 }
