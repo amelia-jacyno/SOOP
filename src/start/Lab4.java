@@ -61,7 +61,18 @@ public class Lab4 {
 		return minArr;
 	}
 
-	public int[] getGreaterThan(int[] inArr, int limit) {
+	public int[] getGreaterThan(int[] arr, int limit) {
+		ArrayList<Integer> greaterArrList = new ArrayList<Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > limit) {
+				greaterArrList.add(arr[i]);
+			}
+		}
+		int[] minArr = new int[minArrList.size()];
+		for (int i = 0; i < minArrList.size(); i++) {
+			minArr[i] = minArrList.get(i);
+		}
+		return minArr;
 	}
 
 	public int[] getRange(int[] inArr, int lowerLimit, int upperLimit) {
