@@ -33,7 +33,14 @@ public class Lab4 {
 		return arr;
 	}
 
-	public int getMinimalElement(int[] inArr) {
+	public int getMinimalElement(int[] arr) {
+		int min = arr[0];
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] < min) {
+				min = arr[i];
+			}
+		}
+		return min;
 	}
 
 	public int[] getMinimalElements(int[] inArr) {
