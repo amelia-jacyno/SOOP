@@ -82,14 +82,21 @@ public class Lab4 {
 				rangeArrList.add(arr[i]);
 			}
 		}
-		int[] greaterArr = new int[rangeArrList.size()];
+		int[] rangeArr = new int[rangeArrList.size()];
 		for (int i = 0; i < rangeArrList.size(); i++) {
-			greaterArr[i] = rangeArrList.get(i);
+			rangeArr[i] = rangeArrList.get(i);
 		}
-		return greaterArr;
+		return rangeArr;
 	}
 
-	public int elementCount(int[] inArr, int what2Look4) {
+	public int elementCount(int[] arr, int target) {
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == target) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	// result contains elements that are in exactlty one array
