@@ -68,14 +68,25 @@ public class Lab4 {
 				greaterArrList.add(arr[i]);
 			}
 		}
-		int[] minArr = new int[minArrList.size()];
-		for (int i = 0; i < minArrList.size(); i++) {
-			minArr[i] = minArrList.get(i);
+		int[] greaterArr = new int[greaterArrList.size()];
+		for (int i = 0; i < greaterArrList.size(); i++) {
+			greaterArr[i] = greaterArrList.get(i);
 		}
-		return minArr;
+		return greaterArr;
 	}
 
-	public int[] getRange(int[] inArr, int lowerLimit, int upperLimit) {
+	public int[] getRange(int[] arr, int lowerLimit, int upperLimit) {
+		ArrayList<Integer> rangeArrList = new ArrayList<Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] >= lowerLimit && arr[i] <= upperLimit) {
+				rangeArrList.add(arr[i]);
+			}
+		}
+		int[] greaterArr = new int[rangeArrList.size()];
+		for (int i = 0; i < rangeArrList.size(); i++) {
+			greaterArr[i] = rangeArrList.get(i);
+		}
+		return greaterArr;
 	}
 
 	public int elementCount(int[] inArr, int what2Look4) {
