@@ -43,7 +43,22 @@ public class Lab4 {
 		return min;
 	}
 
-	public int[] getMinimalElements(int[] inArr) {
+	public int[] getMinimalElements(int[] arr) {
+		ArrayList<Integer> minArrList = new ArrayList<Integer>();
+		int min = arr[0];
+		minArrList.add(min);
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] < min) {
+				min = arr[i];
+				minArrList.clear();
+				minArrList.add(min);
+			}
+		}
+		int[] minArr = new int[minArrList.size()];
+		for (int i = 0; i < minArrList.size(); i++) {
+			minArr[i] = minArrList.get(i);
+		}
+		return minArr;
 	}
 
 	public int[] getGreaterThan(int[] inArr, int limit) {
