@@ -131,7 +131,21 @@ public class Lab4 {
 	}
 
 	// result contains elements that are in both arrays
-	public static int[] commonElements(int[] a1, int[] a2) {
+	public static int[] commonElements(int[] arr1, int[] arr2) {
+		ArrayList<Integer> commonArrList = new ArrayList<Integer>();
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr2.length; j++) {
+				if (arr2[j] == arr1[i] && !commonArrList.contains(arr1[i])) {
+					commonArrList.add(arr1[i]);
+					break;
+				}
+			}
+		}
+		int[] commonArr = new int[commonArrList.size()];
+		for (int i = 0; i < commonArr.length; i++) {
+			commonArr[i] = commonArrList.get(i);
+		}
+		return commonArr;
 	}
 
 	public static void fillWith(int[] inOutArr, int fillValue) {
