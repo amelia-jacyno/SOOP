@@ -156,6 +156,11 @@ public class Lab4 {
 
 	// reverse elements on spot
 	public static void reverseMe(int[] inOutArr) {
+		for (int i = 0; i < inOutArr.length / 2; i++) {
+			int temp = inOutArr[i];
+			inOutArr[i] = inOutArr[inOutArr.length-i];
+			inOutArr[inOutArr.length-i] = temp;
+		}
 	}
 
 	// return an array with elements in reversed order
