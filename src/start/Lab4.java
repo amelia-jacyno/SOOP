@@ -165,6 +165,11 @@ public class Lab4 {
 
 	// return an array with elements in reversed order
 	public static int[] returnReversed(int[] inArr) {
+		int[] arr = new int[inArr.length];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = inArr[arr.length-i];
+		}
+		return arr;
 	}
 
 	// …
