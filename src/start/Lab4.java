@@ -1,6 +1,7 @@
 package start;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Lab4 {
@@ -100,7 +101,33 @@ public class Lab4 {
 	}
 
 	// result contains elements that are in exactlty one array
-	public static int[] uniqueElements(int[] a1, int[] a2) {
+	public static int[] uniqueElements(int[] arr1, int[] arr2) {
+		ArrayList<Integer> uniqueArrList = new ArrayList<Integer>();
+		for (int i = 0; i < arr1.length; i++) {
+			for (int j = 0; j < arr2.length; j++) {
+				if (arr2[j] == arr1[i]) {
+					break;
+				}
+				else if (j == arr2.length - 1) {
+					uniqueArrList.add(arr1[i]);
+				}
+			}
+		}
+		for (int i = 0; i < arr2.length; i++) {
+			for (int j = 0; j < arr1.length; j++) {
+				if (arr2[j] == arr1[i]) {
+					break;
+				}
+				else if (j == arr1.length - 1) {
+					uniqueArrList.add(arr2[i]);
+				}
+			}
+		}
+		int[] uniqueArr = new int[uniqueArrList.size()];
+		for (int i = 0; i < uniqueArr.length; i++) {
+			uniqueArr[i] = uniqueArrList.get(i);
+		}
+		return uniqueArr;
 	}
 
 	// result contains elements that are in both arrays
