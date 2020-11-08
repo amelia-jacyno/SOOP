@@ -149,6 +149,9 @@ public class Lab4 {
 	}
 
 	public static void fillWith(int[] inOutArr, int fillValue) {
+		for (int i = 0; i < inOutArr.length; i++) {
+			inOutArr[i] = fillValue;
+		}
 	}
 
 	// reverse elements on spot
