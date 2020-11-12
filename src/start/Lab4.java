@@ -48,8 +48,10 @@ public class Lab4 {
 		ArrayList<Integer> minArrList = new ArrayList<Integer>();
 		int min = arr[0];
 		minArrList.add(min);
-		for (int i = 0; i < arr.length; i++) {
-			if (arr[i] < min) {
+		for (int i = 1; i < arr.length; i++) {
+			if (arr[i] == min) {
+				minArrList.add(min);
+			} else if (arr[i] < min) {
 				min = arr[i];
 				minArrList.clear();
 				minArrList.add(min);
