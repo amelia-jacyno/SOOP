@@ -45,7 +45,7 @@ public class Lab4 {
 		return arr;
 	}
 
-	public int getMinimalElement(int[] arr) {
+	public static int getMinimalElement(int[] arr) {
 		int min = arr[0];
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] < min) {
@@ -55,7 +55,7 @@ public class Lab4 {
 		return min;
 	}
 
-	public int[] getMinimalElements(int[] arr) {
+	public static int[] getMinimalElements(int[] arr) {
 		ArrayList<Integer> minArrList = new ArrayList<Integer>();
 		int min = arr[0];
 		minArrList.add(min);
@@ -73,7 +73,7 @@ public class Lab4 {
 		return minArr;
 	}
 
-	public int[] getGreaterThan(int[] arr, int limit) {
+	public static int[] getGreaterThan(int[] arr, int limit) {
 		ArrayList<Integer> greaterArrList = new ArrayList<Integer>();
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] > limit) {
@@ -87,7 +87,7 @@ public class Lab4 {
 		return greaterArr;
 	}
 
-	public int[] getRange(int[] arr, int lowerLimit, int upperLimit) {
+	public static int[] getRange(int[] arr, int lowerLimit, int upperLimit) {
 		ArrayList<Integer> rangeArrList = new ArrayList<Integer>();
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] >= lowerLimit && arr[i] <= upperLimit) {
@@ -101,7 +101,7 @@ public class Lab4 {
 		return rangeArr;
 	}
 
-	public int elementCount(int[] arr, int target) {
+	public static int elementCount(int[] arr, int target) {
 		int count = 0;
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == target) {
