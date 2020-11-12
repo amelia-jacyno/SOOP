@@ -115,7 +115,7 @@ public class Lab4 {
 		}
 		for (int i = 0; i < arr2.length; i++) {
 			for (int j = 0; j < arr1.length; j++) {
-				if (arr2[j] == arr1[i]) {
+				if (arr2[i] == arr1[j]) {
 					break;
 				}
 				else if (j == arr1.length - 1) {
@@ -158,8 +158,8 @@ public class Lab4 {
 	public static void reverseMe(int[] inOutArr) {
 		for (int i = 0; i < inOutArr.length / 2; i++) {
 			int temp = inOutArr[i];
-			inOutArr[i] = inOutArr[inOutArr.length-i];
-			inOutArr[inOutArr.length-i] = temp;
+			inOutArr[i] = inOutArr[inOutArr.length-i-1];
+			inOutArr[inOutArr.length-i-1] = temp;
 		}
 	}
 
@@ -167,7 +167,7 @@ public class Lab4 {
 	public static int[] returnReversed(int[] inArr) {
 		int[] arr = new int[inArr.length];
 		for (int i = 0; i < arr.length; i++) {
-			arr[i] = inArr[arr.length-i];
+			arr[i] = inArr[arr.length-i-1];
 		}
 		return arr;
 	}
@@ -207,8 +207,41 @@ public class Lab4 {
 	public static void main(String[] args) {
 		
 		// TESTS
-		
-		int[] arr1 = {1, 2, 3, 4, 5};
-		showArr(arr);
+		System.out.println("Input arr1:");
+		int[] arr1 = readArray(5);
+		showArr(arr1);
+		int[] arr2 = {0, 0, 1, 1, 2, 3, 4, 4, 4, 4, 5, 6, 7};
+		System.out.print("Append arr1, arr2: ");
+		showArr(appendArrays(arr1, arr2));
+		System.out.println("Minimal element in arr2: " + getMinimalElement(arr2));
+		System.out.print("Minimal elements in arr2: ");
+		showArr(getMinimalElements(arr2));
+		System.out.print("Get greater than 3 in arr2: ");
+		showArr(getGreaterThan(arr2, 3));
+		System.out.print("Get in range of 2-4 in arr2: ");
+		showArr(getRange(arr2, 2, 4));
+		System.out.println("Get a number of 3's in arr2: " + elementCount(arr2, 3));
+		System.out.print("Get unique elements in arr1 and arr2: ");
+		showArr(uniqueElements(arr1, arr2));
+		System.out.print("Get common elements in arr1 and arr2: ");
+		showArr(commonElements(arr1, arr2));
+		int[] arr3 = {1, 2, 3, 4};
+		System.out.print("Fill arr3 with 0's: ");
+		fillWith(arr3, 0);
+		showArr(arr3);
+		System.out.print("Reverse arr2: ");
+		reverseMe(arr2);
+		showArr(arr2);
+		System.out.print("Return reversed arr1 and normal arr1: ");
+		showArr(returnReversed(arr1));
+		showArr(arr1);
+		int[][] arr4 = {
+				{1, 2, 3},
+				{4, 5, 6},
+				{7},
+				{8, 9}
+		};
+		System.out.print("Get minimals from arr4: ");
+		showArr(getMinimals(arr4));
 	}
 }
