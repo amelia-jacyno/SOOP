@@ -5,17 +5,14 @@ import java.util.ArrayList;
 public class Lab5 {
 
     static void printArr(int[] arr) {
+        System.out.print("{");
         for (int i = 0; i < arr.length; i++) {
-            if (i == 0) {
-                System.out.print("{");
-            }
             System.out.print(arr[i]);
             if (i != arr.length-1) {
                 System.out.print(", ");
-            } else {
-                System.out.print("}\n");
             }
         }
+        System.out.print("}\n");
     }
 
     static int[] arrayListToPrimitive(ArrayList<Integer> arr) {
@@ -46,11 +43,18 @@ public class Lab5 {
         return arrayListToPrimitive(arr);
     }
 
-    /*
     static int[] toNumberArray(String value) {
-
+        int intValue;
+        try {
+            intValue = Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            System.err.println(value + " is not correctly formatted");
+            return new int[]{};
+        }
+        return toNumberArray(intValue);
     }
 
+    /*
     static int[] addNumberArrays(int[] arr1, int[] arr2) {
 
     }
@@ -63,5 +67,13 @@ public class Lab5 {
         printArr(toNumberArray(-31415));
         printArr(toNumberArray(27182));
         printArr(toNumberArray(0));
+
+        printArr(toNumberArray("xd"));
+        printArr(toNumberArray("-12ey3"));
+        printArr(toNumberArray("-0"));
+        printArr(toNumberArray("-31415"));
+        printArr(toNumberArray("123"));
+        printArr(toNumberArray("0"));
+        printArr(toNumberArray(""));
     }
 }
