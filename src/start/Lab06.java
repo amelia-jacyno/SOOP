@@ -23,15 +23,29 @@ public class Lab06 {
         return factorialRecur(index - 1, result * index);
     }
 
-    /*
     static int greatestCommonDivisorIter(int a, int b) {
-
+        if (a > 0 && b > 0) {
+            while(a != b) {
+                if (a > b) {
+                    a -= b;
+                } else {
+                    b -= a;
+                }
+            }
+            return a;
+        }
+        return 0;
     }
 
     static int greatestCommonDivisorRecur(int a, int b) {
-
+        if (a > 0 && b > 0) {
+            if (a == b) return a;
+            return a > b ? greatestCommonDivisorRecur(a - b, b) : greatestCommonDivisorRecur(a, b - a);
+        }
+        return 0;
     }
 
+    /*
     static int sumPositiveElementsIter(int[] arr) {
 
     }
@@ -53,5 +67,20 @@ public class Lab06 {
         System.out.println(factorialRecur(5));
         System.out.println(factorialRecur(0));
         System.out.println(factorialRecur(-1));
+        System.out.println();
+
+        System.out.println("Greatest common divisor using iteration:");
+        System.out.println(greatestCommonDivisorIter(49, 14));
+        System.out.println(greatestCommonDivisorIter(52, 102));
+        System.out.println(greatestCommonDivisorIter(5, 5));
+        System.out.println(greatestCommonDivisorIter(-5, 0));
+        System.out.println();
+
+        System.out.println("Greatest common divisor using recursion:");
+        System.out.println(greatestCommonDivisorRecur(49, 14));
+        System.out.println(greatestCommonDivisorRecur(52, 102));
+        System.out.println(greatestCommonDivisorRecur(5, 5));
+        System.out.println(greatestCommonDivisorRecur(-5, 0));
+        System.out.println();
     }
 }
