@@ -45,14 +45,23 @@ public class Lab06 {
         return 0;
     }
 
-    /*
     static int sumPositiveElementsIter(int[] arr) {
-
+        int sum = 0;
+        for (int e : arr) {
+            if (e > 0) sum += e;
+        }
+        return sum;
     }
 
     static int sumPositiveElementsRecur(int[] arr) {
+        return sumPositiveElementsRecur(arr, 0, 0);
+    }
 
-    } */
+    static int sumPositiveElementsRecur(int[] arr, int index, int sum) {
+        if (index >= arr.length) return sum;
+        if (arr[index] > 0) return sumPositiveElementsRecur(arr, index + 1, sum + arr[index]);
+        return sumPositiveElementsRecur(arr, index + 1, sum);
+    }
 
     public static void main(String[] args) {
         System.out.println("Factorials using iteration:");
@@ -81,6 +90,18 @@ public class Lab06 {
         System.out.println(greatestCommonDivisorRecur(52, 102));
         System.out.println(greatestCommonDivisorRecur(5, 5));
         System.out.println(greatestCommonDivisorRecur(-5, 0));
+        System.out.println();
+
+        System.out.println("Sum of positive elements using iteration:");
+        System.out.println(sumPositiveElementsIter(new int[]{1, 2, 3, 4, -10, 0, 5, -1}));
+        System.out.println(sumPositiveElementsIter(new int[]{-1, -2, -3, 0}));
+        System.out.println(sumPositiveElementsIter(new int[]{}));
+        System.out.println();
+
+        System.out.println("Sum of positive elements using recursion:");
+        System.out.println(sumPositiveElementsRecur(new int[]{1, 2, 3, 4, -10, 0, 5, -1}));
+        System.out.println(sumPositiveElementsRecur(new int[]{-1, -2, -3, 0}));
+        System.out.println(sumPositiveElementsRecur(new int[]{}));
         System.out.println();
     }
 }
