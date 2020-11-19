@@ -178,11 +178,13 @@ public class Lab5 {
     } */
 
     public static void main(String[] args) {
+        System.out.println("Int toNumberArray test:");
         printArr(toNumberArray(-31415));
         printArr(toNumberArray(27182));
         printArr(toNumberArray(0));
         System.out.println();
 
+        System.out.println("String toNumberArray test:");
         printArr(toNumberArray("xd"));
         printArr(toNumberArray("-12ey3"));
         printArr(toNumberArray("-0"));
@@ -192,14 +194,20 @@ public class Lab5 {
         printArr(toNumberArray(""));
         System.out.println();
 
-        printArr(addNumberArrays(toNumberArray(-2137), toNumberArray(1000)));
+        System.out.println("Positive numbers addNumberArrays test:");
+        printArr(addNumberArrays(toNumberArray(0), toNumberArray(123)));
+        printArr(addNumberArrays(toNumberArray(0), toNumberArray(0)));
+        printArr(addNumberArrays(toNumberArray(123), toNumberArray(123)));
+        printArr(addNumberArrays(toNumberArray(31415), toNumberArray(271)));
+        System.out.println();
+
+        System.out.println("Negative numbers addNumberArrays test:");
+        printArr(addNumberArrays(toNumberArray(-31514), toNumberArray(1000)));
         printArr(addNumberArrays(toNumberArray(100), toNumberArray(-123)));
         printArr(addNumberArrays(toNumberArray(123), toNumberArray(-123)));
         printArr(addNumberArrays(toNumberArray(-123), toNumberArray(123)));
         printArr(addNumberArrays(toNumberArray(-123), toNumberArray(0)));
-        printArr(addNumberArrays(toNumberArray(0), toNumberArray(123)));
-        printArr(addNumberArrays(toNumberArray(0), toNumberArray(0)));
-        printArr(addNumberArrays(toNumberArray(123), toNumberArray(123)));
         printArr(addNumberArrays(toNumberArray(-123), toNumberArray(-123)));
+        printArr(addNumberArrays(toNumberArray(-31415), toNumberArray(-271)));
     }
 }
