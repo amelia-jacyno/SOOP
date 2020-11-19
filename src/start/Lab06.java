@@ -13,14 +13,14 @@ public class Lab06 {
 
     static long factorialRecur(int arg) {
         if (arg < 0) return -1;
-        return factorialRecur(arg, arg, 1);
+        return factorialRecur(arg, 1);
     }
 
-    static long factorialRecur(int arg, int index, int result) {
+    static long factorialRecur(int index, int result) {
         if (index == 1 || index == 0) {
             return result;
         }
-        return factorialRecur(arg, index - 1, result * index);
+        return factorialRecur(index - 1, result * index);
     }
 
     /*
