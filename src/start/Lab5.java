@@ -80,14 +80,24 @@ public class Lab5 {
     }
 
     static int[] toNumberArray(String value) {
-        int intValue;
-        try {
-            intValue = Integer.parseInt(value);
-        } catch (NumberFormatException e) {
-            System.err.println(value + " is not correctly formatted");
-            return new int[]{};
+    	ArrayList<Integer> resultArr = new ArrayList<>();
+    	boolean negative = false;
+        for (int i = 0; i < value.length(); i++) {
+        	int temp = Character.getNumericValue(value.charAt(i));
+        	if (value.charAt(i) == '-') negative = true;
+        	else if (temp < 0 || temp > 9) {
+        		System.err.println(value + " is not correctly formatted");
+            	return new int[]{0};
+        	} else resultArr.add(temp);
         }
-        return toNumberArray(intValue);
+        if (negative) {
+        	resultArr.set(0, resultArr.get(0) * -1);
+        }
+        if (resultArr.size() == 0) {
+        	System.err.println("String is empty");
+        	return new int[]{0};
+        }
+        return arrayListToPrimitive(resultArr);
     }
 
     static int[] subtractNumberArrays(int[] arr1, int[] arr2) {
