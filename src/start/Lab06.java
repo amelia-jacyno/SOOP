@@ -1,5 +1,7 @@
 package start;
 
+import static helpers.ConsoleHelper.*;
+
 public class Lab06 {
 
     static long factorialIter(int arg) {
@@ -64,44 +66,44 @@ public class Lab06 {
     }
 
     public static void main(String[] args) {
-        System.out.println("Factorials using iteration:");
-        System.out.println(factorialIter(10));
-        System.out.println(factorialIter(5));
-        System.out.println(factorialIter(0));
-        System.out.println(factorialIter(-1));
-        System.out.println();
+        println("Factorials using iteration:");
+        println(factorialIter(10));
+        println(factorialIter(5));
+        println(factorialIter(0));
+        println(factorialIter(-1));
+        println();
 
-        System.out.println("Factorials using recursion:");
-        System.out.println(factorialRecur(10));
-        System.out.println(factorialRecur(5));
-        System.out.println(factorialRecur(0));
-        System.out.println(factorialRecur(-1));
-        System.out.println();
+        println("Factorials using recursion:");
+        println(factorialRecur(10));
+        println(factorialRecur(5));
+        println(factorialRecur(0));
+        println(factorialRecur(-1));
+        println();
 
-        System.out.println("Greatest common divisor using iteration:");
-        System.out.println(greatestCommonDivisorIter(49, 14));
-        System.out.println(greatestCommonDivisorIter(52, 102));
-        System.out.println(greatestCommonDivisorIter(5, 5));
-        System.out.println(greatestCommonDivisorIter(-5, 0));
-        System.out.println();
+        println("Greatest common divisor using iteration:");
+        println(greatestCommonDivisorIter(49, 14));
+        println(greatestCommonDivisorIter(52, 102));
+        println(greatestCommonDivisorIter(5, 5));
+        println(greatestCommonDivisorIter(-5, 0));
+        println();
 
-        System.out.println("Greatest common divisor using recursion:");
-        System.out.println(greatestCommonDivisorRecur(49, 14));
-        System.out.println(greatestCommonDivisorRecur(52, 102));
-        System.out.println(greatestCommonDivisorRecur(5, 5));
-        System.out.println(greatestCommonDivisorRecur(-5, 0));
-        System.out.println();
+        println("Greatest common divisor using recursion:");
+        println(greatestCommonDivisorRecur(49, 14));
+        println(greatestCommonDivisorRecur(52, 102));
+        println(greatestCommonDivisorRecur(5, 5));
+        println(greatestCommonDivisorRecur(-5, 0));
+        println();
 
-        System.out.println("Sum of positive elements using iteration:");
-        System.out.println(sumPositiveElementsIter(new int[]{1, 2, 3, 4, -10, 0, 5, -1}));
-        System.out.println(sumPositiveElementsIter(new int[]{-1, -2, -3, 0}));
-        System.out.println(sumPositiveElementsIter(new int[]{}));
-        System.out.println();
+        println("Sum of positive elements using iteration:");
+        println(sumPositiveElementsIter(new int[]{1, 2, 3, 4, -10, 0, 5, -1}));
+        println(sumPositiveElementsIter(new int[]{-1, -2, -3, 0}));
+        println(sumPositiveElementsIter(new int[]{}));
+        println();
 
-        System.out.println("Sum of positive elements using recursion:");
-        System.out.println(sumPositiveElementsRecur(new int[]{1, 2, 3, 4, -10, 0, 5, -1}));
-        System.out.println(sumPositiveElementsRecur(new int[]{-1, -2, -3, 0}));
-        System.out.println(sumPositiveElementsRecur(new int[]{}));
-        System.out.println();
+        println("Sum of positive elements using recursion:");
+        println(sumPositiveElementsRecur(new int[]{1, 2, 3, 4, -10, 0, 5, -1}));
+        println(sumPositiveElementsRecur(new int[]{-1, -2, -3, 0}));
+        println(sumPositiveElementsRecur(new int[]{}));
+        println();
     }
 }
