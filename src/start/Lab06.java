@@ -7,7 +7,7 @@ import static helpers.FileHelper.*;
 
 public class Lab06 {
 
-    public static final String ROOT = "C:/Programming/eclipse/workspace/Laboratories/";
+    public static final String ROOT = "C:\\Programming\\eclipse\\workspace\\Laboratories\\";
 
     static long factorialIter(int arg) {
         if (arg < 0) return -1;
@@ -82,6 +82,21 @@ public class Lab06 {
         return totalLength;
     }
 
+    static int txtLengthInDirAndSubDirs(String path) {
+        int totalLength = 0;
+        File dir = new File(ROOT + path.replace(ROOT, ""));
+        for (File file : dir.listFiles()) {
+            String temp = getFileExtension(file);
+            if (file.isDirectory()) {
+                totalLength += txtLengthInDirAndSubDirs(file.getPath());
+            }
+            if (temp.equals("txt")) {
+                totalLength += file.length();
+            }
+        }
+        return totalLength;
+    }
+
     public static void main(String[] args) {
         println("Factorials using iteration:");
         println(factorialIter(10));
@@ -125,5 +140,6 @@ public class Lab06 {
 
         println("Test file length calculation:");
         println(txtLengthInDir("resources"));
+        println(txtLengthInDirAndSubDirs("resources"));
     }
 }
