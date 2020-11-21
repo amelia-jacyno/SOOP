@@ -1,6 +1,7 @@
 package start;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import static helpers.ConsoleHelper.*;
 import static helpers.FileHelper.*;
@@ -70,7 +71,7 @@ public class Lab06 {
         return sumPositiveElementsRecur(arr, index + 1, sum);
     }
 
-    static int txtLengthInDir(String path) {
+    static int txtLengthInDirOnly(String path) {
         int totalLength = 0;
         File dir = new File(ROOT + path);
         for (File file : dir.listFiles()) {
@@ -82,19 +83,34 @@ public class Lab06 {
         return totalLength;
     }
 
-    static int txtLengthInDirAndSubDirs(String path) {
+    static int txtLengthInDir(String path) {
         int totalLength = 0;
         File dir = new File(ROOT + path.replace(ROOT, ""));
         for (File file : dir.listFiles()) {
             String temp = getFileExtension(file);
             if (file.isDirectory()) {
-                totalLength += txtLengthInDirAndSubDirs(file.getPath());
+                totalLength += txtLengthInDir(file.getPath());
             }
             if (temp.equals("txt")) {
                 totalLength += file.length();
             }
         }
         return totalLength;
+    }
+
+    static int countFilesWithExtension(String path, String extension) {
+        int count = 0;
+        File dir = new File(ROOT + path.replace(ROOT, ""));
+        for (File file : dir.listFiles()) {
+            if (file.isDirectory()) {
+                count += countFilesWithExtension(file.getPath(), extension);
+            } else if (getFileExtension(file).equals(extension)) count++;
+        }
+        return count;
+    }
+
+    static float avgTxtLengthInDir(String path) {
+        return (float)txtLengthInDir(path) / countFilesWithExtension(path, "txt");
     }
 
     public static void main(String[] args) {
@@ -138,8 +154,11 @@ public class Lab06 {
         println(sumPositiveElementsRecur(new int[]{}));
         println();
 
-        println("Test file length calculation:");
+        println("Test File functions:");
+        println(txtLengthInDirOnly("resources"));
         println(txtLengthInDir("resources"));
-        println(txtLengthInDirAndSubDirs("resources"));
+        println(avgTxtLengthInDir("resources"));
+        println(countFilesWithExtension("resources", "txt"));
+        println(countFilesWithExtension("resources", "bat"));
     }
 }
