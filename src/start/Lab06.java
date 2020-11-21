@@ -1,8 +1,13 @@
 package start;
 
+import java.io.File;
+
 import static helpers.ConsoleHelper.*;
+import static helpers.FileHelper.*;
 
 public class Lab06 {
+
+    public static final String ROOT = "C:/Programming/eclipse/workspace/Laboratories/";
 
     static long factorialIter(int arg) {
         if (arg < 0) return -1;
@@ -65,6 +70,18 @@ public class Lab06 {
         return sumPositiveElementsRecur(arr, index + 1, sum);
     }
 
+    static int txtLengthInDir(String path) {
+        int totalLength = 0;
+        File dir = new File(ROOT + path);
+        for (File file : dir.listFiles()) {
+            String temp = getFileExtension(file);
+            if (temp.equals("txt")) {
+                totalLength += file.length();
+            }
+        }
+        return totalLength;
+    }
+
     public static void main(String[] args) {
         println("Factorials using iteration:");
         println(factorialIter(10));
@@ -105,5 +122,8 @@ public class Lab06 {
         println(sumPositiveElementsRecur(new int[]{-1, -2, -3, 0}));
         println(sumPositiveElementsRecur(new int[]{}));
         println();
+
+        println("Test file length calculation:");
+        println(txtLengthInDir("resources"));
     }
 }
