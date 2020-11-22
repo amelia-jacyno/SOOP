@@ -1,7 +1,6 @@
 package classes.class06;
 
 import static helpers.ConsoleHelper.*;
-import classes.class06.*;
 
 public class Main {
     public static void main(String[] args) {
