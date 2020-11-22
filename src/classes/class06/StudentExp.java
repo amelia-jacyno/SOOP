@@ -45,17 +45,22 @@ public class StudentExp {
     @Override
     public String toString() {
         String json = "{\n" +
-                "\"firstName\": " + "\"" + firstName + "\",\n" +
-                "\"lastName\": " + "\"" + lastName + "\",\n" +
-                "\"birthYear\": " + birthYear + ",\n" +
-                "\"courses\": [\n";
+                "   \"firstName\": " + "\"" + firstName + "\",\n" +
+                "   \"lastName\": " + "\"" + lastName + "\",\n" +
+                "   \"birthYear\": " + birthYear + ",\n" +
+                "   \"courses\": [\n";
         for (int i = 0; i < courses.size(); i++) {
-            json += courses.get(i);
+            CourseDef course = courses.get(i);
+            json += "   {\n" +
+                    "       \"id\": \"" + course.getId() + "\",\n" +
+                    "       \"number\": " + course.getNumber() + ",\n" +
+                    "       \"grade\": " + course.getGrade() + "\n" +
+                    "   }";
             if (i != courses.size() - 1) {
                 json += ",\n";
             }
         }
-        json += "]}";
+        json += "]\n}";
         return json;
     }
 }
