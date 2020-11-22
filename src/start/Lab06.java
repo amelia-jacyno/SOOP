@@ -7,7 +7,7 @@ import static helpers.FileHelper.*;
 
 public class Lab06 {
 
-    public static final String ROOT = "C:\\Programming\\eclipse\\workspace\\Laboratories\\";
+    public static final String ROOT = "C:\\Programming\\eclipse\\workspace\\SOOP\\";
 
     static long factorialIter(int arg) {
         if (arg < 0) return -1;
