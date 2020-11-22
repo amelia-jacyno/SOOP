@@ -17,10 +17,7 @@ public class CourseDef {
     }
 
     public static boolean isGradeAcceptable(float grade) {
-        if (isInArray(grade, acceptableGrades)) {
-            return true;
-        }
-        return false;
+        return isInArray(grade, acceptableGrades);
     }
 
     public boolean setGrade(float grade) {
