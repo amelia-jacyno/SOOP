@@ -1,4 +1,4 @@
-package classes.class05;
+package classes;
 
 public class Class05 {
     public static int maxValueIteration(int[] arr) {
