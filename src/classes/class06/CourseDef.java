@@ -8,10 +8,10 @@ public class CourseDef {
     final int number;
     float grade;
 
-    public CourseDef(String id, int number) {
-        if (id.isBlank()) this.id = "NULL";
+    public CourseDef(String id, int number) throws IllegalArgumentException{
+        if (id.isBlank()) throw new IllegalArgumentException("id can not be blank");
         else this.id = id;
-        if (number < 1 || number > 10) this.number = 0;
+        if (number < 1 || number > 10) throw new IllegalArgumentException("number has to be between 1 and 10");
         else this.number = number;
         grade = 2.0f;
     }
