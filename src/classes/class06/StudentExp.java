@@ -1,7 +1,5 @@
 package classes.class06;
 
-import java.lang.reflect.Array;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 public class StudentExp {
@@ -23,8 +21,11 @@ public class StudentExp {
         float fGrade = (float)grade;
         if (courses.size() < 20) {
             boolean unique = true;
-            for (int i = 0; i < courses.size(); i++) {
-                if (courses.get(i).getId().equals(course.getId())) unique = false;
+            for (CourseDef c : courses) {
+                if (c.getId().equals(course.getId())) {
+                    unique = false;
+                    break;
+                }
             }
             if (unique) {
                 if (course.setGrade(fGrade)) {
@@ -38,8 +39,8 @@ public class StudentExp {
 
     public float getAverageGrade() {
         float sum = 0;
-        for (int i = 0; i < courses.size(); i++) {
-            sum += courses.get(i).getGrade();
+        for (CourseDef course : courses) {
+            sum += course.getGrade();
         }
         return sum / courses.size();
     }
