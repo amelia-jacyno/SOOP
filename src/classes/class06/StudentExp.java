@@ -19,7 +19,8 @@ public class StudentExp {
     }
 
     public boolean addCourse(CourseDef course, double grade) {
-        if (courses.size() < 20) {
+        float fGrade = (float)grade;
+        if (courses.size() < 20 && CourseDef.isGradeAcceptable(fGrade)) {
             boolean unique = true;
             for (int i = 0; i < courses.size(); i++) {
                 if (courses.get(i).getId().equals(course.getId())) unique = false;
