@@ -45,6 +45,9 @@ public class CourseDef {
 
     @Override
     public String toString() {
-        return "{\"id\": \"" + id + "\", \"number\": " + number + ", \"grade\":" + grade;
+        return "{\n" +
+                "   \"id\": \"" + id + "\",\n" +
+                "   \"number\": " + number + ",\n" +
+                "   \"grade\": " + grade + "\n}";
     }
 }
