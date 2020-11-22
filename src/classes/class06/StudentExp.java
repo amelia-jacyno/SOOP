@@ -18,6 +18,20 @@ public class StudentExp {
         else this.birthYear = birthYear;
     }
 
+    public boolean addCourse(CourseDef course, double grade) {
+        if (courses.size() < 20) {
+            boolean unique = true;
+            for (int i = 0; i < courses.size(); i++) {
+                if (courses.get(i).getId().equals(course.getId())) unique = false;
+            }
+            if (unique) {
+                courses.add(course);
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         String json = "{\n" +
