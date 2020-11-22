@@ -17,4 +17,21 @@ public class StudentExp {
             throw new IllegalArgumentException("birthYear has to be a number between 1990 and 2005");
         else this.birthYear = birthYear;
     }
+
+    @Override
+    public String toString() {
+        String json = "{\n" +
+                "\"firstName\": " + "\"" + firstName + "\",\n" +
+                "\"lastName\": " + "\"" + lastName + "\",\n" +
+                "\"birthYear\": " + birthYear + ",\n" +
+                "\"courses\": [\n";
+        for (int i = 0; i < courses.size(); i++) {
+            json += courses.get(i);
+            if (i != courses.size() - 1) {
+                json += ",\n";
+            }
+        }
+        json += "]}";
+        return json;
+    }
 }
