@@ -1,6 +1,6 @@
-package start;
+package labs;
 
-public class Lab2 {
+public class Lab02 {
 	
 	static void quickSort(int[] arr, int lo, int hi) {
 		if (lo < hi) {

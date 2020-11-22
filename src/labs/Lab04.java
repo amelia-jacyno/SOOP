@@ -1,10 +1,10 @@
-package start;
+package labs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Lab4 {
+public class Lab04 {
 
 	static Scanner input = new Scanner(System.in);
 
@@ -174,7 +174,7 @@ public class Lab4 {
 		return arr;
 	}
 
-	// …
+	// ï¿½
 	public static void showArr(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			if (i == 0) {

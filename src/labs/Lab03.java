@@ -1,10 +1,10 @@
-package start;
+package labs;
 
 import java.lang.Math;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Lab3 {
+public class Lab03 {
 	
 	public static final double PI = 3.141592;
 	

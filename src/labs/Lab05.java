@@ -1,8 +1,8 @@
-package start;
+package labs;
 
 import java.util.ArrayList;
 
-public class Lab5 {
+public class Lab05 {
 
     static void printArr(int[] arr) {
         System.out.print("{");

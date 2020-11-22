@@ -1,4 +1,4 @@
-package start;
+package labs.start;
 
 public class Decimal2BinaryConversion {
 	public static void main(String[] args)
