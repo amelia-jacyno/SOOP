@@ -16,14 +16,15 @@ public class CourseDef {
         grade = 2.0f;
     }
 
-    public CourseDef(String id, int number, float grade) {
-        this.id = id;
-        this.number = number;
-        this.grade = grade;
+    public static boolean isGradeAcceptable(float grade) {
+        if (isInArray(grade, acceptableGrades)) {
+            return true;
+        }
+        return false;
     }
 
     public boolean setGrade(float grade) {
-        if (isInArray(grade, acceptableGrades)) {
+        if (isGradeAcceptable(grade)) {
             this.grade = grade;
             return true;
         }
