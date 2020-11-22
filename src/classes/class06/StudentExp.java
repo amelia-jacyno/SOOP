@@ -33,6 +33,14 @@ public class StudentExp {
         return false;
     }
 
+    public float getAverageGrade() {
+        float sum = 0;
+        for (int i = 0; i < courses.size(); i++) {
+            sum += courses.get(i).getGrade();
+        }
+        return sum / courses.size();
+    }
+
     @Override
     public String toString() {
         String json = "{\n" +
