@@ -1,7 +1,6 @@
 package start;
 
 import java.io.File;
-import java.util.ArrayList;
 
 import static helpers.ConsoleHelper.*;
 import static helpers.FileHelper.*;
