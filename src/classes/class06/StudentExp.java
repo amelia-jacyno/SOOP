@@ -1,12 +1,13 @@
 package classes.class06;
 
+import java.lang.reflect.Array;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 public class StudentExp {
     final String firstName, lastName;
     int birthYear;
-    ArrayList<CourseDef> courses;
+    ArrayList<CourseDef> courses = new ArrayList<>();
 
     public StudentExp(String firstName, String lastName, int birthYear) throws IllegalArgumentException {
         if (firstName.isBlank()) throw new IllegalArgumentException("firstName can not be blank");
