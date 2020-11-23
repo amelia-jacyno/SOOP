@@ -52,14 +52,18 @@ public class Class05 {
     }
 
     public static int totalRecursion(int[] arr, int lowerLimit, int upperLimit, int index) {
+        return totalRecursion(arr, lowerLimit, upperLimit, 0, 0);
+    }
+
+    public static int totalRecursion(int[] arr, int lowerLimit, int upperLimit, int index, int total) {
         if (index < arr.length) {
             if (arr[index] >= lowerLimit && arr[index] <= upperLimit) {
-                return arr[index] + totalRecursion(arr, lowerLimit, upperLimit, index + 1);
+                return totalRecursion(arr, lowerLimit, upperLimit, index + 1, total + arr[index]);
             } else {
-                return totalRecursion(arr, lowerLimit, upperLimit, index + 1);
+                return totalRecursion(arr, lowerLimit, upperLimit, index + 1, total);
             }
         } else {
-            return 0;
+            return total;
         }
 
     }
