@@ -105,21 +105,25 @@ public class Class05 {
     }
 
     public static int occurrencesRecursion(int[] arr, int value, int index) {
+        return occurrencesRecursion(arr, value, index, 0);
+    }
+
+    public static int occurrencesRecursion(int[] arr, int value, int index, int occurrences) {
         if (index < arr.length) {
             if (arr[index] == value) {
-                return 1 + occurrencesRecursion(arr, value, index + 1);
+                return occurrencesRecursion(arr, value, index + 1, occurrences + 1);
             } else {
-                return occurrencesRecursion(arr, value, index + 1);
+                return occurrencesRecursion(arr, value, index + 1, occurrences);
             }
         } else {
-            return 0;
+            return occurrences;
         }
 
     }
 
     public static void main(String[] args) {
 
-        int[] test = {1, 7, 4};
+        int[] test = {1, 7, 7, 4};
 
         System.out.println("Max value (iteration): " + maxValueIteration(test));
         System.out.println("max value (recursion): " + maxValueRecursion(test, 0));
@@ -144,7 +148,7 @@ public class Class05 {
         printReversedRecursion(test, 0);
         System.out.println(" (recursion)");
 
-        int value = 2;
+        int value = 7;
         System.out.println("\nNumber of occurrences of " + value + ": ");
         System.out.println(occurrencesIteration(test, value) + " (iteration)");
         System.out.println(occurrencesRecursion(test, value, 0) + " (recursion)");
