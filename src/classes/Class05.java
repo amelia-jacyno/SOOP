@@ -11,13 +11,18 @@ public class Class05 {
         return max;
     }
 
-    public static int maxValueRecursion(int[] arr, int index) {
+    public static int maxValueRecursion(int[] arr) {
+        return maxValueRecursion(arr, 0, 0);
+    }
+
+    public static int maxValueRecursion(int[] arr, int index, int max) {
         if (index < arr.length) {
-            return Math.max(arr[index], maxValueRecursion(arr, index + 1));
-        } else if (arr.length != 0) {
-            return arr[arr.length - 1];
+            if (arr[index] > max) {
+                return maxValueRecursion(arr, index + 1, arr[index]);
+            }
+            return maxValueRecursion(arr, index + 1, max);
         } else {
-            return Integer.MIN_VALUE;
+            return max;
         }
     }
 
@@ -130,7 +135,7 @@ public class Class05 {
         int[] test = {1, 7, 7, 4};
 
         System.out.println("Max value (iteration): " + maxValueIteration(test));
-        System.out.println("max value (recursion): " + maxValueRecursion(test, 0));
+        System.out.println("max value (recursion): " + maxValueRecursion(test));
 
         int lim = 2;
         System.out.println("\nElements greater than " + lim + ":");
