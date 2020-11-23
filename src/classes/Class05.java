@@ -16,14 +16,13 @@ public class Class05 {
     }
 
     public static int maxValueRecursion(int[] arr, int index, int max) {
-        if (index < arr.length) {
-            if (arr[index] > max) {
-                return maxValueRecursion(arr, index + 1, arr[index]);
-            }
-            return maxValueRecursion(arr, index + 1, max);
-        } else {
+        if (index >= arr.length) {
             return max;
         }
+        if (arr[index] > max) {
+            return maxValueRecursion(arr, index + 1, arr[index]);
+        }
+        return maxValueRecursion(arr, index + 1, max);
     }
 
     public static void greaterThanIteration(int[] arr, int limit) {
@@ -32,7 +31,6 @@ public class Class05 {
                 System.out.print(a + " ");
             }
         }
-        System.out.println(" (iteration)");
     }
 
     public static void greaterThanRecursion(int[] arr, int limit, int index) {
@@ -41,8 +39,6 @@ public class Class05 {
                 System.out.print(arr[index] + " ");
             }
             greaterThanRecursion(arr, limit, index + 1);
-        } else {
-            System.out.println(" (recursion)");
         }
     }
 
@@ -61,31 +57,25 @@ public class Class05 {
     }
 
     public static int totalRecursion(int[] arr, int lowerLimit, int upperLimit, int index, int total) {
-        if (index < arr.length) {
-            if (arr[index] >= lowerLimit && arr[index] <= upperLimit) {
-                return totalRecursion(arr, lowerLimit, upperLimit, index + 1, total + arr[index]);
-            } else {
-                return totalRecursion(arr, lowerLimit, upperLimit, index + 1, total);
-            }
-        } else {
+        if (index >= arr.length) {
             return total;
         }
-
+        if (arr[index] >= lowerLimit && arr[index] <= upperLimit) {
+            return totalRecursion(arr, lowerLimit, upperLimit, index + 1, total + arr[index]);
+        }
+        return totalRecursion(arr, lowerLimit, upperLimit, index + 1, total);
     }
 
     public static void printIteration(int[] arr) {
         for (int a : arr) {
             System.out.print(a + " ");
         }
-        System.out.println(" (iteration)");
     }
 
     public static void printRecursion(int[] arr, int index) {
         if (index < arr.length) {
             System.out.print(arr[index] + " ");
             printRecursion(arr, index + 1);
-        } else {
-            System.out.println(" (recursion)");
         }
     }
 
@@ -93,7 +83,6 @@ public class Class05 {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[arr.length - 1 - i] + " ");
         }
-        System.out.println(" (iteration)");
     }
 
     public static void printReversedRecursion(int[] arr, int index) {
@@ -140,7 +129,9 @@ public class Class05 {
         int lim = 2;
         System.out.println("\nElements greater than " + lim + ":");
         greaterThanIteration(test, lim);
+        System.out.println(" (iteration)");
         greaterThanRecursion(test, lim, 0);
+        System.out.println(" (recursion)");
 
         int low = 3;
         int high = 5;
@@ -150,10 +141,13 @@ public class Class05 {
 
         System.out.println("\nPrint array: ");
         printIteration(test);
+        System.out.println(" (iteration)");
         printRecursion(test, 0);
+        System.out.println(" (recursion)");
 
         System.out.println("\nPrint reversed array: ");
         printReversedIteration(test);
+        System.out.println(" (iteration)");
         printReversedRecursion(test, 0);
         System.out.println(" (recursion)");
 
