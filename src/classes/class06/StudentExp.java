@@ -56,12 +56,7 @@ public class StudentExp {
                 "   \"birthYear\": " + birthYear + ",\n" +
                 "   \"courses\": [\n";
         for (int i = 0; i < courses.size(); i++) {
-            CourseDef course = courses.get(i);
-            json += "   {\n" +
-                    "       \"id\": \"" + course.getId() + "\",\n" +
-                    "       \"number\": " + course.getNumber() + ",\n" +
-                    "       \"grade\": " + course.getGrade() + "\n" +
-                    "   }";
+            json += courses.get(i).toString().replaceAll("(?m)^", "\t"); // Add tab to each newline
             if (i != courses.size() - 1) {
                 json += ",\n";
             }
