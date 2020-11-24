@@ -3,22 +3,23 @@ package classes.class06;
 import static helpers.ArrayHelper.*;
 
 public class CourseDef {
-    public static final float[] acceptableGrades = {2.0f, 2.5f, 3.0f, 3.5f, 4.0f, 4.5f, 5.0f};
-    final String id;
-    final int number;
-    int minPoints = 1;
-    int maxPoints = 10;
-    float grade;
+    private static final float[] acceptableGrades = {2.0f, 2.5f, 3.0f, 3.5f, 4.0f, 4.5f, 5.0f};
+    private static final float defaultGrade = 2f;
+    private static final int minPoints = 1;
+    private static final int maxPoints = 10;
+    private final String id;
+    private final int number;
+    private float grade;
 
     public CourseDef(String id, int number) throws IllegalArgumentException{
         if (id.isBlank()) throw new IllegalArgumentException("id can not be blank");
         else this.id = id;
         if (number < minPoints || number > maxPoints) throw new IllegalArgumentException("number has to be between 1 and 10");
         else this.number = number;
-        grade = 2.0f;
+        grade = defaultGrade;
     }
 
-    public boolean isGradeAcceptable(float grade) {
+    private boolean isGradeAcceptable(float grade) {
         return isInArray(grade, acceptableGrades);
     }
 
@@ -32,10 +33,6 @@ public class CourseDef {
 
     public String getId() {
         return id;
-    }
-
-    public int getNumber() {
-        return number;
     }
 
     public float getGrade() {

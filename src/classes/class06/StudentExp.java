@@ -3,12 +3,12 @@ package classes.class06;
 import java.util.ArrayList;
 
 public class StudentExp {
-    final String firstName, lastName;
-    int birthYear;
-    int minBirthYear = 1990;
-    int maxBirthYear = 2005;
-    int maxCourseCount = 20;
-    ArrayList<CourseDef> courses = new ArrayList<>();
+    private static final int minBirthYear = 1990;
+    private static final int maxBirthYear = 2005;
+    private static final int maxCourseCount = 20;
+    private final String firstName, lastName;
+    private int birthYear;
+    private ArrayList<CourseDef> courses = new ArrayList<>();
 
     public StudentExp(String firstName, String lastName, int birthYear) throws IllegalArgumentException {
         if (firstName.isBlank()) throw new IllegalArgumentException("firstName can not be blank");
