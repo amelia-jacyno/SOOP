@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class StudentExp {
     final String firstName, lastName;
     int birthYear;
+    int minBirthYear = 1990;
+    int maxBirthYear = 2005;
+    int maxCourseCount = 20;
     ArrayList<CourseDef> courses = new ArrayList<>();
 
     public StudentExp(String firstName, String lastName, int birthYear) throws IllegalArgumentException {
@@ -12,14 +15,14 @@ public class StudentExp {
         else this.firstName = firstName;
         if (lastName.isBlank()) throw new IllegalArgumentException("lastName can not be blank");
         else this.lastName = lastName;
-        if (birthYear < 1990 || birthYear > 2005)
+        if (birthYear < minBirthYear || birthYear > maxBirthYear)
             throw new IllegalArgumentException("birthYear has to be a number between 1990 and 2005");
         else this.birthYear = birthYear;
     }
 
     public boolean addCourse(CourseDef course, double grade) {
         float fGrade = (float)grade;
-        if (courses.size() < 20) {
+        if (courses.size() < maxCourseCount) {
             boolean unique = true;
             for (CourseDef c : courses) {
                 if (c.getId().equals(course.getId())) {
