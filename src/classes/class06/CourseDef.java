@@ -16,7 +16,7 @@ public class CourseDef {
         grade = 2.0f;
     }
 
-    public static boolean isGradeAcceptable(float grade) {
+    public boolean isGradeAcceptable(float grade) {
         return isInArray(grade, acceptableGrades);
     }
 
