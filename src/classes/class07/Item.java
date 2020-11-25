@@ -59,6 +59,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "{ type: " + type + ", quantity: " + quantity + ", comment: " + comment + " }";
+        return "{ type: " + type + ", quantity: " + quantity + ", comment: \"" + comment + "\" }";
     }
 }
