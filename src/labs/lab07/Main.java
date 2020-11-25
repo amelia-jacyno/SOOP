@@ -1,6 +1,6 @@
-package classes.class07;
+package labs.lab07;
 
-import static classes.class07.ProductType.*;
+import static labs.lab07.ProductType.*;
 import static helpers.ConsoleHelper.*;
 
 public class Main {

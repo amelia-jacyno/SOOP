@@ -1,4 +1,4 @@
-package classes.class07;
+package labs.lab07;
 
 public enum ProductType {
     BREAD (3.5), MILK(2.2), TEA(15.0), BUTTER(7.5), OTHER(0.0);

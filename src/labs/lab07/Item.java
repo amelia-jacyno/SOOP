@@ -1,4 +1,4 @@
-package classes.class07;
+package labs.lab07;
 
 public class Item {
     private static final int minQuantity = 1, maxQuantity = 20;
