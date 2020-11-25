@@ -14,7 +14,7 @@ public class ConsoleHelper {
         System.out.println();
     }
 
-    static void printArr(int[] arr) {
+    public static void printArr(Object[] arr) {
         print("{");
         for (int i = 0; i < arr.length; i++) {
             print(arr[i]);
