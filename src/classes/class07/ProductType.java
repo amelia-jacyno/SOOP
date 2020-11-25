@@ -16,7 +16,7 @@ public enum ProductType {
     ProductType(double weight) {
         this.weight=weight;
     }
-    public double getWeihgt() {
+    public double getWeight() {
         return weight;
     }
     public String show() {
