@@ -21,7 +21,44 @@ public class Item {
         this.type = type;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
     private boolean isQuantityValid(int quantity) {
         return quantity >= minQuantity && quantity <= maxQuantity;
+    }
+
+    public boolean addItem() {
+        if (quantity < maxQuantity) {
+            quantity++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean addItems(int count) {
+        if (quantity + count > maxQuantity) return false;
+        quantity += count;
+        return true;
+    }
+
+    public boolean removeItems(int count) {
+        if (quantity - count < minQuantity) return false;
+        quantity -= count;
+        return true;
+    }
+
+    public double getTotalWeight() {
+        return type.getWeight() * quantity;
+    }
+
+    public boolean equals(Item item) {
+        return quantity == item.quantity && type == item.type;
+    }
+
+    @Override
+    public String toString() {
+        return "{ type: " + type + ", quantity: " + quantity + ", comment: " + comment + " }";
     }
 }
