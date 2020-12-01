@@ -3,7 +3,6 @@ package labs.lab08;
 import labs.lab07.Item;
 import labs.lab07.ProductType;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -58,5 +57,16 @@ public class Bag {
         items.add(item);
         usedCapacity += item.getQuantity();
         return true;
+    }
+
+    @Override
+    public String toString() {
+        String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity + "items: { ";
+        for (int i = 0; i < items.size(); i++) {
+            string += items.get(i);
+            if (i < items.size() - 1) string += ", ";
+        }
+        string += "}}";
+        return string;
     }
 }
