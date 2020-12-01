@@ -25,6 +25,10 @@ public class Item {
         return quantity;
     }
 
+    public ProductType getType() {
+        return type;
+    }
+
     private boolean isQuantityValid(int quantity) {
         return quantity >= minQuantity && quantity <= maxQuantity;
     }
