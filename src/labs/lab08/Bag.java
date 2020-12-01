@@ -6,6 +6,8 @@ import labs.lab07.ProductType;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import static helpers.ArrayHelper.arrayListEqualsOrderless;
+
 public class Bag {
     private static final int minCapacity = 1;
     protected ArrayList<Item> items = new ArrayList<>();
@@ -68,5 +70,14 @@ public class Bag {
         }
         string += "}}";
         return string;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) return true;
+        if (!(o instanceof Bag)) return false;
+        Bag bag = (Bag) o;
+        if (bag.totalCapacity != totalCapacity) return false;
+        return arrayListEqualsOrderless(new ArrayList<>(bag.items), new ArrayList<>(items));
     }
 }
