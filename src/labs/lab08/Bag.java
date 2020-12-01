@@ -61,7 +61,7 @@ public class Bag {
 
     @Override
     public String toString() {
-        String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity + "items: { ";
+        String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity + ", items: { ";
         for (int i = 0; i < items.size(); i++) {
             string += items.get(i);
             if (i < items.size() - 1) string += ", ";
