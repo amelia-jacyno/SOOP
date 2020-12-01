@@ -8,8 +8,8 @@ import java.util.Iterator;
 
 public class Bag {
     private static final int minCapacity = 1;
-    private ArrayList<Item> items = new ArrayList<>();
-    private int totalCapacity, usedCapacity = 0;
+    protected ArrayList<Item> items = new ArrayList<>();
+    protected int totalCapacity, usedCapacity = 0;
 
     public Bag(int totalCapacity) throws IllegalArgumentException {
         if (totalCapacity < minCapacity) throw new IllegalArgumentException("Invalid totalCapacity: " + totalCapacity);
