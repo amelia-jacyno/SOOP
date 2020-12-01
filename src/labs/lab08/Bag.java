@@ -18,10 +18,7 @@ public class Bag {
     }
 
     public void removeAllItems() {
-        for (Item i : items) {
-            i = null;
-        }
-        usedCapacity = 0;
+        items.clear();
     }
 
     public void remove(ProductType type) {
