@@ -21,15 +21,36 @@ public class Bag {
         items.clear();
     }
 
-    public void remove(ProductType type) {
+    public boolean remove(ProductType type) {
+        boolean removed = false;
         Iterator<Item> i = items.iterator();
         while (i.hasNext()) {
             Item item = i.next();
             if (item.getType() == type) {
                 usedCapacity -= item.getQuantity();
                 i.remove();
+                removed = true;
             }
         }
+        return removed;
+    }
+
+    public boolean remove(ProductType type, int n) {
+        boolean removed = false;
+        Iterator<Item> i = items.iterator();
+        while (i.hasNext() && n > 0) {
+            Item item = i.next();
+            if (item.getType() == type) {
+                if (item.getQuantity() > n) {
+                    item.removeItems(n);
+                    return true;
+                }
+                n -= item.getQuantity();
+                i.remove();
+                removed = true;
+            }
+        }
+        return removed;
     }
 
     public boolean putIn(Item item) {
