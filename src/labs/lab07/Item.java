@@ -8,8 +8,10 @@ public class Item {
 
     public Item(ProductType type, int quantity, String comment) {
         this.type = type;
-        if (isQuantityValid(quantity)) this.quantity = quantity;
-        this.comment = comment;
+        if (isQuantityValid(quantity))
+            this.quantity = quantity;
+        if (comment != null)
+            this.comment = comment;
     }
 
     public Item(ProductType type, int quantity) {
@@ -34,23 +36,17 @@ public class Item {
     }
 
     public boolean addItem() {
-        if (quantity < maxQuantity) {
-            quantity++;
-            return true;
-        }
-        return false;
+        return addItems(1);
     }
 
     public boolean addItems(int count) {
-        if (quantity + count > maxQuantity) return false;
+        if (!isQuantityValid(quantity + count)) return false;
         quantity += count;
         return true;
     }
 
     public boolean removeItems(int count) {
-        if (quantity - count < minQuantity) return false;
-        quantity -= count;
-        return true;
+        return addItems(-count);
     }
 
     public double getTotalWeight() {
@@ -63,6 +59,6 @@ public class Item {
 
     @Override
     public String toString() {
-        return "{ type: " + type + ", quantity: " + quantity + ", comment: \"" + comment + "\" }";
+        return "{ type: " + type.show() + ", quantity: " + quantity + ", comment: \"" + comment + "\" }";
     }
 }
