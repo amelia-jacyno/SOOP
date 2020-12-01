@@ -6,7 +6,7 @@ import labs.lab07.ProductType;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import static helpers.ArrayHelper.arrayListEqualsOrderless;
+import static helpers.ArrayHelper.*;
 
 public class Bag {
     private static final int minCapacity = 1;
@@ -14,7 +14,8 @@ public class Bag {
     protected int totalCapacity, usedCapacity = 0;
 
     public Bag(int totalCapacity) throws IllegalArgumentException {
-        if (totalCapacity < minCapacity) throw new IllegalArgumentException("Invalid totalCapacity: " + totalCapacity);
+        if (totalCapacity < minCapacity)
+            throw new IllegalArgumentException("Invalid totalCapacity: " + totalCapacity);
         this.totalCapacity = totalCapacity;
     }
 
@@ -64,10 +65,7 @@ public class Bag {
     @Override
     public String toString() {
         String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity + ", items: { ";
-        for (int i = 0; i < items.size(); i++) {
-            string += items.get(i);
-            if (i < items.size() - 1) string += ", ";
-        }
+        string += arrayToString(new ArrayList<>(items));
         string += "}}";
         return string;
     }
@@ -78,6 +76,6 @@ public class Bag {
         if (!(o instanceof Bag)) return false;
         Bag bag = (Bag) o;
         if (bag.totalCapacity != totalCapacity) return false;
-        return arrayListEqualsOrderless(new ArrayList<>(bag.items), new ArrayList<>(items));
+        return arrayEqualsOrderless(new ArrayList<>(bag.items), new ArrayList<>(items));
     }
 }

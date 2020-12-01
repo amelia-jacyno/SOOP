@@ -2,7 +2,7 @@ package labs.lab08;
 
 import java.util.ArrayList;
 
-import static helpers.ArrayHelper.arrayListEqualsOrderless;
+import static helpers.ArrayHelper.*;
 
 public class HandHoldBag extends Bag {
     private boolean premiumQuality;
@@ -15,10 +15,7 @@ public class HandHoldBag extends Bag {
     public String toString() {
         String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity +
                 ", premiumQuality: " + premiumQuality + ", items: { ";
-        for (int i = 0; i < items.size(); i++) {
-            string += items.get(i);
-            if (i < items.size() - 1) string += ", ";
-        }
+        string += arrayToString(new ArrayList<>(items));
         string += "}}";
         return string;
     }
@@ -29,6 +26,6 @@ public class HandHoldBag extends Bag {
         if (!(o instanceof HandHoldBag)) return false;
         HandHoldBag bag = (HandHoldBag) o;
         if (bag.premiumQuality != premiumQuality) return false;
-        return arrayListEqualsOrderless(new ArrayList<>(bag.items), new ArrayList<>(items));
+        return arrayEqualsOrderless(new ArrayList<>(bag.items), new ArrayList<>(items));
     }
 }

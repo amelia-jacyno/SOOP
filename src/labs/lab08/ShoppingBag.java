@@ -4,7 +4,7 @@ import labs.lab07.Item;
 
 import java.util.ArrayList;
 
-import static helpers.ArrayHelper.arrayListEqualsOrderless;
+import static helpers.ArrayHelper.*;
 
 public class ShoppingBag extends Bag {
     private boolean extremelyRobust;
@@ -25,10 +25,7 @@ public class ShoppingBag extends Bag {
     public String toString() {
         String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity +
                 ", extremelyRobust: " + extremelyRobust + ", items: { ";
-        for (int i = 0; i < items.size(); i++) {
-            string += items.get(i);
-            if (i < items.size() - 1) string += ", ";
-        }
+        string += arrayToString(new ArrayList<>(items));
         string += "}}";
         return string;
     }
@@ -39,6 +36,6 @@ public class ShoppingBag extends Bag {
         if (!(o instanceof ShoppingBag)) return false;
         ShoppingBag bag = (ShoppingBag) o;
         if (bag.extremelyRobust != extremelyRobust) return false;
-        return arrayListEqualsOrderless(new ArrayList<>(bag.items), new ArrayList<>(items));
+        return arrayEqualsOrderless(new ArrayList<>(bag.items), new ArrayList<>(items));
     }
 }

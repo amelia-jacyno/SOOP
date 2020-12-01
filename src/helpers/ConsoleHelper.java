@@ -1,5 +1,9 @@
 package helpers;
 
+import java.util.ArrayList;
+
+import static helpers.ArrayHelper.arrayToString;
+
 public class ConsoleHelper {
 
     public static void print(Object var) {
@@ -15,13 +19,6 @@ public class ConsoleHelper {
     }
 
     public static void printArr(Object[] arr) {
-        print("{");
-        for (int i = 0; i < arr.length; i++) {
-            print(arr[i]);
-            if (i != arr.length - 1) {
-                print(", ");
-            }
-        }
-        print("}\n");
+        println(arrayToString(arr));
     }
 }
