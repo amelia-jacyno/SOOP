@@ -24,17 +24,7 @@ public class Bag {
     }
 
     public boolean remove(ProductType type) {
-        boolean removed = false;
-        Iterator<Item> i = items.iterator();
-        while (i.hasNext()) {
-            Item item = i.next();
-            if (item.getType() == type) {
-                usedCapacity -= item.getQuantity();
-                i.remove();
-                removed = true;
-            }
-        }
-        return removed;
+        return remove(type, usedCapacity);
     }
 
     public boolean remove(ProductType type, int n) {
