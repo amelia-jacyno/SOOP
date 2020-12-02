@@ -23,11 +23,7 @@ public class ShoppingBag extends Bag {
 
     @Override
     public String toString() {
-        String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity +
-                ", extremelyRobust: " + extremelyRobust + ", items: { ";
-        string += arrayToString(new ArrayList<>(items));
-        string += "}}";
-        return string;
+        return toString("extremelyRobust: " + extremelyRobust + ", ");
     }
 
     @Override

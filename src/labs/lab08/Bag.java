@@ -54,7 +54,11 @@ public class Bag {
 
     @Override
     public String toString() {
-        String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity + ", items: { ";
+        return toString("");
+    }
+
+    protected String toString(String injection) {
+        String string = "{ " + injection + "totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity + ", items: { ";
         string += arrayToString(new ArrayList<>(items));
         string += "}}";
         return string;

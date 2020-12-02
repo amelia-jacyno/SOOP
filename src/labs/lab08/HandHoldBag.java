@@ -13,11 +13,7 @@ public class HandHoldBag extends Bag {
 
     @Override
     public String toString() {
-        String string = "{ totalCapacity: " + totalCapacity + ", usedCapacity: " + usedCapacity +
-                ", premiumQuality: " + premiumQuality + ", items: { ";
-        string += arrayToString(new ArrayList<>(items));
-        string += "}}";
-        return string;
+        return toString("premiumQuality: " + premiumQuality + ", ");
     }
 
     @Override
