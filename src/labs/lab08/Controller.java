@@ -50,6 +50,9 @@ public class Controller {
             println(handHoldBag.remove(i.getType(), 2));
             println(shoppingBag.remove(i.getType(), 3));
         }
+        println(bag.remove(ProductType.BREAD, -1));
+        println(handHoldBag.remove(ProductType.BREAD, -1));
+        println(shoppingBag.remove(ProductType.BREAD, -1));
         println(bag);
         println(handHoldBag);
         println(shoppingBag);

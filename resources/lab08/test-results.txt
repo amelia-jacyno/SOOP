@@ -31,6 +31,9 @@ true
 true
 false
 true
+false
+false
+false
 { totalCapacity: 25, usedCapacity: 14, items: { { { type: bread [3.5], quantity: 2, comment: "" }, { type: butter [7.5], quantity: 1, comment: "" }, { type: milk [2.2], quantity: 4, comment: "" }, { type: tea [15.0], quantity: 7, comment: "" } }}}
 { premiumQuality: true, totalCapacity: 5, usedCapacity: 1, items: { { { type: bread [3.5], quantity: 1, comment: "" } }}}
 { extremelyRobust: true, totalCapacity: 30, usedCapacity: 7, items: { { { type: milk [2.2], quantity: 2, comment: "" }, { type: tea [15.0], quantity: 5, comment: "" } }}}
