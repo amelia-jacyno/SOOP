@@ -21,6 +21,7 @@ public class Bag {
 
     public void removeAllItems() {
         items.clear();
+        usedCapacity = 0;
     }
 
     public boolean remove(ProductType type) {
@@ -35,9 +36,11 @@ public class Bag {
             if (item.getType() == type) {
                 if (item.getQuantity() > n) {
                     item.removeItems(n);
+                    usedCapacity -= n;
                     return true;
                 }
                 n -= item.getQuantity();
+                usedCapacity -= item.getQuantity();
                 i.remove();
                 removed = true;
             }
