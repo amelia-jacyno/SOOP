@@ -16,7 +16,7 @@ public class ShoppingBag extends Bag {
     public double getTotalWeight() {
         double totalWeight = 0;
         for (Item i : items) {
-            totalWeight = i.getTotalWeight();
+            totalWeight += i.getTotalWeight();
         }
         return totalWeight;
     }
